@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>FRAME FLOW OS — Protótipo interativo · PROMPT 04</title>
+<link rel="stylesheet" href="assets/common.css">
+<style>
+  html, body { background: #0A0A0A; min-height: 100vh; }
+  body { max-width: 880px; margin: 0 auto; padding: 64px 28px 80px; }
+  .frame-glyph { width: 26px; height: 26px; border: 1.5px solid #F4F0E7; position: relative; display: inline-block; }
+  .frame-glyph::after { content: ""; position: absolute; right: -4px; bottom: -4px; width: 9px; height: 9px; border-right: 2px solid #E10606; border-bottom: 2px solid #E10606; }
+  .wordmark { display: flex; align-items: center; gap: 14px; margin-bottom: 54px; }
+  .wordmark .wm { font-family: "Instrument Serif", Georgia, serif; font-size: 15px; letter-spacing: .32em; color: #F4F0E7; }
+  .wordmark .wm b { color: #E10606; font-weight: 400; }
+  .wordmark .tag { margin-left: auto; font-family: var(--mono); font-size: 9.5px; letter-spacing: .2em; color: rgba(244,240,231,.5); }
+  h1 { font-family: "Instrument Serif", Georgia, serif; font-weight: 400; font-size: clamp(44px, 7vw, 74px); line-height: .98; color: #F4F0E7; letter-spacing: -.01em; margin-bottom: 18px; }
+  h1 .stop { display: inline-block; width: 12px; height: 12px; background: #E10606; margin-left: 8px; }
+  .sub { font-size: 16px; color: rgba(244,240,231,.72); line-height: 1.7; max-width: 560px; margin-bottom: 40px; }
+  .sub b { color: #F4F0E7; font-weight: 600; }
+  .kicker { font-family: var(--mono); font-size: 10px; letter-spacing: .26em; color: rgba(244,240,231,.6); text-transform: uppercase; margin-bottom: 14px; }
+  .kicker .sep { color: #E10606; margin: 0 10px; }
+  .entries { border-top: 1px solid rgba(244,240,231,.14); margin-bottom: 52px; }
+  .entry { display: flex; align-items: baseline; gap: 18px; padding: 22px 4px; border-bottom: 1px solid rgba(244,240,231,.14); text-decoration: none; color: inherit; transition: background .2s; }
+  .entry:hover { background: rgba(244,240,231,.04); }
+  .entry .num { font-family: "Instrument Serif", Georgia, serif; font-size: 30px; color: #E10606; }
+  .entry .t { font-family: "Instrument Serif", Georgia, serif; font-size: 25px; color: #F4F0E7; }
+  .entry .d { font-size: 13.5px; color: rgba(244,240,231,.62); margin-top: 5px; line-height: 1.5; }
+  .entry .go { margin-left: auto; font-family: var(--mono); font-size: 10px; letter-spacing: .18em; color: rgba(244,240,231,.62); white-space: nowrap; }
+  .entry:hover .go { color: #F4F0E7; }
+  .guia { border: 1px solid rgba(244,240,231,.14); padding: 26px 28px 18px; margin-bottom: 52px; background: rgba(16,16,16,.4); }
+  .guia h2 { font-family: "Instrument Serif", Georgia, serif; font-size: 21px; color: #F4F0E7; font-weight: 400; margin-bottom: 6px; }
+  .guia .gh { font-family: var(--mono); font-size: 9.5px; letter-spacing: .2em; color: rgba(244,240,231,.48); text-transform: uppercase; margin-bottom: 18px; }
+  .gi { display: grid; grid-template-columns: 30px 1fr; gap: 12px; padding: 9px 0; border-bottom: 1px solid rgba(244,240,231,.08); }
+  .gi:last-child { border-bottom: 0; }
+  .gi .n { font-family: var(--mono); font-size: 11px; color: #E10606; padding-top: 2px; }
+  .gi .t { font-size: 14px; color: #F4F0E7; font-weight: 600; }
+  .gi .h { font-size: 12.5px; color: rgba(244,240,231,.62); margin-top: 3px; line-height: 1.55; }
+  .gi .h code { font-family: var(--mono); font-size: 11px; color: rgba(244,240,231,.85); border: 1px solid rgba(244,240,231,.2); padding: 1px 6px; }
+  .notas { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 56px; }
+  .nota { border: 1px solid rgba(244,240,231,.14); font-family: var(--mono); font-size: 10px; letter-spacing: .12em; color: rgba(244,240,231,.72); padding: 8px 12px; text-transform: uppercase; }
+  .nota.red { border-color: rgba(225,6,6,.55); }
+  .paleta { display: flex; gap: 10px; align-items: center; margin-bottom: 60px; }
+  .paleta .sw { width: 54px; height: 30px; border: 1px solid rgba(244,240,231,.2); }
+  .paleta .swc { width: 44px; height: 30px; }
+  .paleta .lbl { font-family: var(--mono); font-size: 9px; letter-spacing: .14em; color: rgba(244,240,231,.5); margin-right: 8px; }
+  .docs { border-top: 1px solid rgba(244,240,231,.14); padding-top: 18px; display: flex; gap: 26px; flex-wrap: wrap; }
+  .docs a { font-family: var(--mono); font-size: 10.5px; letter-spacing: .14em; color: rgba(244,240,231,.72); text-decoration: none; border-bottom: 1px solid rgba(225,6,6,.55); padding-bottom: 4px; text-transform: uppercase; }
+  .docs a:hover { color: #F4F0E7; }
+  .foot { margin-top: 60px; font-family: var(--mono); font-size: 9px; letter-spacing: .16em; color: rgba(244,240,231,.4); text-transform: uppercase; }
+</style>
+</head>
+<body>
+  <div class="wordmark">
+    <span class="frame-glyph" aria-hidden="true"></span>
+    <span class="wm">FRAME FLOW <b>OS</b></span>
+    <span class="tag">PROMPT 04 · CONCEITO C CONSOLIDADO</span>
+  </div>
+
+  <div class="kicker">Protótipo interativo independente<span class="sep">·</span>Exploração visual<span class="sep">·</span>Não implementado no sistema</div>
+  <h1>Frame Flow Signature<span class="stop" aria-hidden="true"></span></h1>
+  <p class="sub">
+    A direção aprovada do <b>Conceito C</b>, agora viva: painéis funcionais sempre legíveis,
+    ambiente tridimensional com profundidade real e câmera que responde ao contexto,
+    elegância editorial herdada do Conceito A e núcleo orbital com <b>relações reais</b> do dataset.
+    Nada aqui altera o aplicativo FRAME FLOW em produção.
+  </p>
+
+  <div class="entries">
+    <a class="entry" href="desktop.html">
+      <span class="num">01</span>
+      <span><span class="t">Protótipo desktop</span>
+        <span class="d" style="display:block">Projetado para 1440px · modos Comando e Imersivo · Ctrl+K · 4 contextos executivos</span></span>
+      <span class="go">ABRIR →</span>
+    </a>
+    <a class="entry" href="mobile.html">
+      <span class="num">02</span>
+      <span><span class="t">Protótipo mobile</span>
+        <span class="d" style="display:block">Design próprio para 390px · navegação inferior · safe areas · imersivo adaptado</span></span>
+      <span class="go">ABRIR →</span>
+    </a>
+  </div>
+
+  <div class="guia">
+    <h2>Guia de demonstração — as 6 interações obrigatórias</h2>
+    <div class="gh">Percorra na ordem; o estado da interface nunca se perde entre contextos</div>
+    <div class="gi"><span class="n">01</span><span><span class="t">Alternância Comando / Imersivo</span>
+      <span class="h">Botão no topo (desktop e mobile) ou via paleta. No Comando, o 3D simplesmente não existe — custo zero.</span></span></div>
+    <div class="gi"><span class="n">02</span><span><span class="t">Abertura da Cap</span>
+      <span class="h">Desktop: clique na zona da Cap (palco à direita). Mobile: aba “Cap”. Quatro estados demonstráveis: atenção, processando, alerta, confirmação.</span></span></div>
+    <div class="gi"><span class="n">03</span><span><span class="t">Central de comandos</span>
+      <span class="h">Tecla <code>Ctrl+K</code> / <code>⌘K</code> (desktop) ou botão de busca (mobile). Filtra, navega com ↑↓ e executa com ⏎.</span></span></div>
+    <div class="gi"><span class="n">04</span><span><span class="t">Abertura de uma decisão</span>
+      <span class="h">Painel “Central de Decisões” → clique em uma decisão → drawer (desktop) ou bottom sheet (mobile) com contexto, opções e voto.</span></span></div>
+    <div class="gi"><span class="n">05</span><span><span class="t">Navegação para a inteligência financeira</span>
+      <span class="h">Trilho lateral, paleta ⌘K, alerta das contas vencidas ou o link “2 contas vencidas” no painel — brief editorial em papel.</span></span></div>
+    <div class="gi"><span class="n">06</span><span><span class="t">Transição entre contextos sem perder estado</span>
+      <span class="h">Abra a decisão das lentes, aplique um filtro em Decisões, troque de contexto e volte: drawer, filtro e votos permanecem exatamente como deixou.</span></span></div>
+  </div>
+
+  <div class="notas">
+    <span class="nota red">Dados demonstrativos fictícios</span>
+    <span class="nota">Sem conexão com Supabase</span>
+    <span class="nota">App principal intocado</span>
+    <span class="nota">Movimento reduzido respeitado</span>
+  </div>
+
+  <div class="paleta" aria-label="Paleta: preto profundo, branco quente, vermelho assinatura">
+    <span class="lbl">PALETA</span>
+    <span class="sw" style="background:#0A0A0A"></span>
+    <span class="sw" style="background:#F4F0E7"></span>
+    <span class="sw" style="background:#E10606"></span>
+  </div>
+
+  <div class="docs">
+    <a href="screenshots/">Screenshots dos dois modos</a>
+    <a href="report/FRAME-FLOW-PROMPT04-Relatorio.pdf">Relatório PDF — testes, componentes e plano</a>
+    <a href="../">Aplicativo FRAME FLOW (produção, intocado)</a>
+  </div>
+
+  <div class="foot">FRAME VISION · FRAME FLOW OS · PROMPT 04 — aguardando aprovação para qualquer implementação</div>
+</body>
+</html>

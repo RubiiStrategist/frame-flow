@@ -1,0 +1,28 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "Aqui está a verificação visual do mockup **FRAME FLOW OS**:\n\n1.  **Textos sobrepostos ou vazando?**\n    *   **ATENÇÃO:** Há um leve **corte/overlap** no canto inferior direito. O texto da fala da Capivara (\"Cap: separarei os...\") e o botão vermelho de \"2 CONTAS VENCIDAS\" estão muito próximos da borda, com risco de serem cortados em telas menores ou se a interface tiver scroll limitado. O texto superior direito também está um pouco justo.\n\n2.  **Algo desalinhado ou quebrado?**\n    *   OK. A grade (grid) parece sólida, com alinhamento preciso entre a sidebar, o conteúdo central e o painel 3D à direita.\n\n3.  **Texto ilegível por contraste/tamanho?**\n    *   **ATENÇÃO:** O contraste dos textos \"fantasma\" (placeholder) nos gráficos centrais (\"Inteligência Financeira\", \"Indicadores Comerciais\", etc.) é **muito baixo** contra o fundo #0A0A0A. Eles parecem desabilitados ou fundidos com o background, dificultando a leitura rápida se forem dados reais. Se forem apenas rótulos de fundo, está aceitável, mas arriscado.\n\n4.  **Parece template SaaS genérico?**\n    *   **NÃO / OK.** A identidade é forte. O uso do preto profundo, do vermelho (#E10606) como cor de alerta/destaque e a tipografia editorial (serifada no título \"Boa noite, Rubian\") afastam completamente a aparência de template genérico cinza. Parece um produto premium ou de nicho (\"Executive\").\n\n5.  **A fonte serifada elegante carregou?**\n    *   SIM / OK. O título principal \"Boa noite, Rubian\" exibe claramente uma fonte com serifa elegante (estilo Didot/Bodoni), essencial para a identidade editorial solicitada. Não parece fallback genérico.\n\n6.  **Área reservada para o mascote (Capivara)?**\n    *   SIM / OK. Existe uma área dedicada no canto inferior direito (\"Cap Executiva\"). Há um **foco de luz (spotlight)** direcionado para o ícone geométrico da capivara, criando uma presença teatral e bem iluminada conforme solicitado.\n\n7.  **3 Informações prioritárias em 5 segundos:**\n    1.  **Saudação Personalizada:** \"Boa noite, Rubian\" (Contexto de usuário e horário).\n    2.  **Alerta Crítico:** \"2 contas vencidas\" e \"3 decisões aguardam voto\" (Urgência/Ação necessária).\n    3.  **Status da IA/Mascote:** A Capivara Executiva está ativa (\"AO VIVO\") e pronta para apresentar o resumo da semana (Assistente inteligente).\n\n**Resumo Geral:** O design transmite excelentemente a atmosfera de \"OS Executivo\" e \"Dark Mode\" premium. Os pontos de atenção são principalmente o contraste dos textos de fundo nos gráficos e o espaçamento no rodapé direito.",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1793317225,
+  "id": "20261030074011b7b19b4f8e8048d8",
+  "model": "glm-5v-turbo",
+  "object": "chat.completion",
+  "request_id": "20261030074011b7b19b4f8e8048d8",
+  "usage": {
+    "completion_tokens": 748,
+    "completion_tokens_details": {
+      "reasoning_tokens": 0
+    },
+    "prompt_tokens": 5989,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "total_tokens": 6737
+  }
+}

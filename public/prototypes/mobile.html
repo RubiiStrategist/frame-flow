@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>FRAME FLOW OS — Protótipo interativo · Mobile 390 (PROMPT 04)</title>
+<link rel="stylesheet" href="assets/common.css">
+<link rel="stylesheet" href="assets/mobile.css">
+</head>
+<body data-mode="comando" data-ctx="m-painel">
+
+<canvas id="orb" class="stage" aria-label="Ambiente 3D: núcleo orbital do ecossistema FRAME FLOW" role="img"></canvas>
+<div class="ambient" aria-hidden="true"></div>
+<div class="grain" aria-hidden="true"></div>
+<div class="vinheta" aria-hidden="true"></div>
+<div class="lbox top" aria-hidden="true"></div>
+<div class="lbox bot" aria-hidden="true"></div>
+
+<!-- ═══ TOPBAR ═══ -->
+<header class="m-topbar">
+  <div class="mark" aria-hidden="true">
+    <span class="glyph"><svg width="18" height="18" viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="16" height="16"/><path d="M3 9h16"/></svg></span>
+    <span class="word serif">FRAME FLOW <b>OS</b></span>
+  </div>
+  <button class="mbtn" id="searchTrigger" aria-label="Abrir central de comandos">
+    <svg width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="9" cy="9" r="6.4"/><path d="M14 14l4 4"/></svg>
+  </button>
+  <div class="mode" id="modeToggle" role="group" aria-label="Modo de experiência">
+    <button class="mopt on" data-mode="comando" aria-pressed="true">COM</button>
+    <button class="mopt" data-mode="imersivo" aria-pressed="false">IMERS</button>
+  </div>
+</header>
+
+<!-- ═══ SLATE ═══ -->
+<div class="m-slate">
+  <span class="mono b1">EXECUTIVO / <span id="crumbTitle">Início</span></span>
+  <span class="mono b2">R·CEO · S44</span>
+  <span class="demo-chip">DEMO</span>
+</div>
+
+<main class="m-scenes">
+  <!-- ═══ INÍCIO ═══ -->
+  <section class="mscene" data-ctx="m-painel" aria-label="Início">
+    <div class="m-hero">
+      <div class="kicker smallcaps">Sessão executiva · <span id="heroData">—</span></div>
+      <h1 class="display serif"><span id="heroSaud">Boa noite</span>, Rubian<span class="stop" aria-hidden="true"></span></h1>
+      <p class="headline"><button class="linklike" id="goDec">3 decisões aguardam seu voto</button> — prazo domingo. <button class="linklike" id="goFin">2 contas vencidas</button> pedem atenção.</p>
+    </div>
+
+    <div class="m-strip" id="stripWindow">
+      <span class="strip-label smallcaps">Ambiente · núcleo orbital — relações reais</span>
+      <button class="strip-cta mono" data-ctx="m-ecos">VER ECOSSISTEMA →</button>
+    </div>
+
+    <div class="m-panels">
+      <article class="mcard perf">
+        <div class="p-head"><span class="code">FF·01</span><h2 class="t serif">Financeiro</h2><span class="tc" id="ff01tc">DEMO</span></div>
+        <div class="bigv"><span class="n serif">R$ 284.500</span><span class="up">▲ 6,2%</span></div>
+        <span class="lbl">receita do mês</span>
+        <div class="fin3">
+          <div class="s"><span class="k smallcaps">Resultado</span><span class="v">R$ 106.200</span></div>
+          <div class="s"><span class="k smallcaps">A receber</span><span class="v">R$ 96.200</span></div>
+          <div class="s"><span class="k smallcaps">Runway</span><span class="v">9 meses</span></div>
+        </div>
+        <button class="openbrief" data-ctx="m-financeiro">Abrir brief<span aria-hidden="true"> →</span></button>
+      </article>
+
+      <article class="mcard perf">
+        <div class="p-head"><span class="code">DC·03</span><h2 class="t serif">Decisões</h2><span class="tc">3 ABERTAS</span></div>
+        <div id="decPreview"></div>
+        <button class="openbrief" data-ctx="m-decisoes">Abrir central<span aria-hidden="true"> →</span></button>
+      </article>
+
+      <article class="mcard perf">
+        <div class="p-head"><span class="code">OP·04</span><h2 class="t serif">Pulso</h2><span class="tc">S44</span></div>
+        <div id="projList"></div>
+        <div class="weekline" id="weekline" aria-label="Semana: terça e sexta críticos"></div>
+      </article>
+    </div>
+  </section>
+
+  <!-- ═══ FINANCEIRO ═══ -->
+  <section class="mscene" data-ctx="m-financeiro" aria-label="Inteligência Financeira" hidden>
+    <div class="sheet-paper">
+      <span class="bh-k smallcaps">Brief financeiro · semana 44 · out 2026</span>
+      <h2 class="brief-title serif">R$ 284.500</h2>
+      <span class="bh-sub"><span class="delta-up">▲ 6,2%</span> receita do mês · demo</span>
+      <div class="brief-chart">
+        <svg viewBox="0 0 640 210" preserveAspectRatio="none" aria-hidden="true">
+          <g stroke="rgba(10,10,10,.10)"><line x1="0" y1="24" x2="640" y2="24"/><line x1="0" y1="80" x2="640" y2="80"/><line x1="0" y1="136" x2="640" y2="136"/></g>
+          <line x1="0" y1="188" x2="640" y2="188" stroke="rgba(10,10,10,.28)"/>
+          <path d="M24 138 C110 144 168 116 236 108 S 372 70 446 58 S 596 32 622 28 L622 188 L24 188 Z" fill="rgba(225,6,6,.14)"/>
+          <path d="M24 138 C110 144 168 116 236 108 S 372 70 446 58 S 596 32 622 28" fill="none" stroke="#E10606" stroke-width="2.4"/>
+          <circle cx="622" cy="28" r="5" fill="#E10606"/>
+        </svg>
+      </div>
+      <div class="brief-grid2">
+        <div class="bs"><span class="k smallcaps">Resultado</span><span class="v">R$ 106.200</span></div>
+        <div class="bs"><span class="k smallcaps">Despesas</span><span class="v">R$ 178.300</span></div>
+        <div class="bs"><span class="k smallcaps">A receber</span><span class="v">R$ 96.200</span></div>
+        <div class="bs"><span class="k smallcaps">Meta Q4</span><span class="v">74%</span></div>
+      </div>
+      <h3 class="smallcaps sect">Contas a receber</h3>
+      <div class="contas" id="contasList"></div>
+      <div class="cashrow">
+        <div class="cs"><span class="k smallcaps">Caixa atual</span><span class="v serif">R$ 1.610.000</span></div>
+        <div class="cs"><span class="k smallcaps">Runway</span><span class="v serif">9 meses</span></div>
+      </div>
+      <footer class="brief-foot"><span class="mono">Documento demonstrativo · FF·01</span></footer>
+    </div>
+    <div class="m-alerts">
+      <h3 class="serif aside-t">Alertas do mês</h3>
+      <div id="alertList"></div>
+    </div>
+  </section>
+
+  <!-- ═══ INDICADORES ═══ -->
+  <section class="mscene" data-ctx="m-indic" aria-label="Indicadores" hidden>
+    <div class="m-panels">
+      <article class="mcard perf">
+        <div class="p-head"><span class="code">FC·02</span><h2 class="t serif">Comercial</h2><span class="tc">S44</span></div>
+        <div id="pipeList"></div>
+        <div class="com2">
+          <div class="s"><span class="k smallcaps">Propostas</span><span class="v">7</span></div>
+          <div class="s"><span class="k smallcaps">Conversão</span><span class="v">32%</span></div>
+          <div class="s"><span class="k smallcaps">Meta Q4</span><span class="v">74%</span></div>
+        </div>
+      </article>
+      <article class="mcard perf">
+        <div class="p-head"><span class="code">OP·04·B</span><h2 class="t serif">Operação</h2><span class="tc">S44</span></div>
+        <div id="opStats"></div>
+      </article>
+    </div>
+  </section>
+
+  <!-- ═══ DECISÕES ═══ -->
+  <section class="mscene" data-ctx="m-decisoes" aria-label="Central de Decisões" hidden>
+    <div class="dec-head">
+      <div class="p-head no-margin"><span class="code">DC·03</span><h2 class="t serif">Decisões</h2><span class="tc">3 ABERTAS</span></div>
+      <div class="filters" role="group" aria-label="Filtros">
+        <button class="fchip on" data-filter="todas">Todas</button>
+        <button class="fchip" data-filter="urgentes">Urgentes</button>
+        <button class="fchip" data-filter="financeiras">Financ.</button>
+      </div>
+    </div>
+    <div id="decList" class="decmlist"></div>
+    <p class="dec-note smallcaps">Votos demonstrativos · nenhum dado real é alterado</p>
+  </section>
+
+  <!-- ═══ CAP ═══ -->
+  <section class="mscene" data-ctx="m-cap" aria-label="Cap Executiva" hidden>
+    <div class="capview">
+      <div class="capframe">
+        <svg width="128" height="134" viewBox="0 0 200 210" aria-hidden="true">
+          <ellipse cx="100" cy="196" rx="52" ry="7" fill="rgba(0,0,0,0.45)"/>
+          <rect x="152" y="128" width="13" height="46" rx="6.5" fill="#141414" stroke="#f4f0e7" stroke-width="2.4" transform="rotate(-38 158 150)"/>
+          <path d="M52 150 L100 176 L148 150 L148 210 L52 210 Z" fill="#f4f0e7"/>
+          <path d="M52 150 L100 176 L100 210 L52 210 Z" fill="#ece6da"/>
+          <path d="M100 176 L100 210" stroke="#e10606" stroke-width="3"/>
+          <circle cx="100" cy="196" r="2.6" fill="#e10606"/>
+          <rect x="58" y="34" width="17" height="24" rx="8" fill="#141414" stroke="#f4f0e7" stroke-width="2.4"/>
+          <rect x="125" y="34" width="17" height="24" rx="8" fill="#141414" stroke="#f4f0e7" stroke-width="2.4"/>
+          <rect x="42" y="48" width="116" height="84" rx="32" fill="#141414" stroke="#f4f0e7" stroke-width="2.4"/>
+          <rect x="66" y="108" width="68" height="36" rx="17" fill="#1c1c1c" stroke="#f4f0e7" stroke-width="2.4"/>
+          <circle cx="87" cy="126" r="2.6" fill="#f4f0e7" opacity="0.55"/>
+          <circle cx="113" cy="126" r="2.6" fill="#f4f0e7" opacity="0.55"/>
+          <ellipse cx="82" cy="90" rx="6.4" ry="7.4" fill="#f4f0e7"/>
+          <ellipse cx="118" cy="90" rx="6.4" ry="7.4" fill="#f4f0e7"/>
+        </svg>
+        <span class="smallcaps asset">Arte de referência · asset oficial pendente</span>
+      </div>
+      <h2 class="serif cap-t">Cap Executiva</h2>
+      <span class="cap-state mono" id="capMState"><i aria-hidden="true"></i>Atenção — 2 contas vencidas</span>
+      <p class="cap-say" id="capMSay"><b>Cap:</b> separei os vencidos e preparei o resumo da semana 44.</p>
+      <div class="cp-actions" id="capMActions"></div>
+      <div class="cp-states">
+        <span class="smallcaps">Estados planejados</span>
+        <div class="state-btns">
+          <button class="stbtn" data-estado="atencao">Atenção</button>
+          <button class="stbtn" data-estado="processando">Processando</button>
+          <button class="stbtn" data-estado="alerta">Alerta</button>
+          <button class="stbtn" data-estado="confirmacao">Confirmação</button>
+        </div>
+      </div>
+      <footer class="cap-integ">
+        <span class="smallcaps">Área de integração: 1:1 · 4 estados animados · vetorial + PNG @2x</span>
+        <span class="smallcaps">Asset oficial será fornecido pela FRAME VISION</span>
+      </footer>
+    </div>
+  </section>
+
+  <!-- ═══ ECOSSISTEMA (overlay imersivo adaptado) ═══ -->
+  <section class="mscene mscene-ecos" data-ctx="m-ecos" aria-label="Ecossistema" hidden>
+    <div class="eco-top">
+      <div class="p-head no-margin"><span class="code">EC·05</span><h2 class="t serif">Ecossistema</h2><button class="eco-back mono" data-ctx="m-painel" aria-label="Voltar ao início">← VOLTAR</button></div>
+    </div>
+    <div class="eco-live" id="ecoLive">
+      <canvas id="orbEco" class="stage-box" aria-label="Núcleo orbital 3D — toque nos nós" role="img"></canvas>
+      <span class="smallcaps ecohint">toque nos nós · relações reais do dataset</span>
+      <div class="legend">
+        <span class="lg"><i class="proj"></i>Projeto</span>
+        <span class="lg"><i class="dec"></i>Decisão</span>
+        <span class="lg"><i class="ind"></i>Indicador</span>
+        <span class="lg"><i class="alr"></i>Alerta</span>
+      </div>
+    </div>
+    <div class="eco-rel">
+      <h3 class="serif aside-t">Relações reais</h3>
+      <div id="relList"></div>
+    </div>
+  </section>
+</main>
+
+<!-- ═══ BOTTOM SHEET (decisão) ═══ -->
+<div class="scrim" id="scrim" hidden></div>
+<aside class="sheet" id="sheet" role="dialog" aria-modal="true" aria-label="Detalhe da decisão" hidden>
+  <div class="sh-grab" aria-hidden="true"></div>
+  <header class="sh-head">
+    <div><span class="code mono" id="shCode">DC·03</span>
+      <h3 class="sh-title serif" id="shTitle">—</h3></div>
+    <button class="dw-close" id="shClose" aria-label="Fechar detalhe">✕</button>
+  </header>
+  <div class="sh-body" id="shBody"></div>
+  <footer class="sh-foot">
+    <div class="dw-actions" id="shActions"></div>
+    <span class="smallcaps">Ação demonstrativa — nenhum dado real é alterado</span>
+  </footer>
+</aside>
+
+<!-- ═══ PALETA (fullscreen) ═══ -->
+<div class="palette" id="palette" role="dialog" aria-modal="true" aria-label="Central de comandos" hidden>
+  <div class="pal-in">
+    <svg width="16" height="16" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><circle cx="9" cy="9" r="6.4"/><path d="M14 14l4 4"/></svg>
+    <input id="palInput" type="text" placeholder="Buscar decisões, contextos…" autocomplete="off" aria-label="Buscar ou executar comando">
+    <span class="kbd mono">esc</span>
+  </div>
+  <div class="pal-results" id="palResults" role="listbox" aria-label="Resultados"></div>
+</div>
+
+<!-- ═══ NODE CARD (seleção 3D) ═══ -->
+<div class="nodecard" id="nodecard" role="dialog" aria-label="Entidade selecionada" hidden>
+  <span class="ncard-code mono" id="ncardCode">—</span>
+  <h4 class="serif" id="ncardTitle">—</h4>
+  <p id="ncardRel">—</p>
+  <button class="btn btn-primary" id="ncardGo">Abrir contexto</button>
+  <button class="nc-close" id="ncardClose" aria-label="Fechar">✕</button>
+</div>
+
+<div class="toasts" id="toasts" aria-live="polite"></div>
+
+<!-- ═══ BOTTOM NAV ═══ -->
+<nav class="bottom-nav" aria-label="Navegação principal">
+  <div class="bn-items">
+    <button class="bn active" data-ctx="m-painel" aria-current="page">
+      <svg width="20" height="20" viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="16" height="16"/><path d="M3 9h16"/></svg>
+      Início
+    </button>
+    <button class="bn" data-ctx="m-financeiro">
+      <svg width="20" height="20" viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2.5" y="5" width="17" height="12"/><circle cx="11" cy="11" r="3"/></svg>
+      Financ.
+    </button>
+    <button class="bn" data-ctx="m-indic">
+      <svg width="20" height="20" viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 18 C7 16 8 10 11 9 S17 6 19 3"/></svg>
+      Indic.
+    </button>
+    <button class="bn" data-ctx="m-decisoes">
+      <svg width="20" height="20" viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M11 2v4M11 16v4M2 11h4M16 11h4"/><circle cx="11" cy="11" r="4"/></svg>
+      Decisões
+    </button>
+    <button class="bn" data-ctx="m-cap">
+      <svg width="20" height="20" viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="5" y="6" width="12" height="9" rx="3.5"/><rect x="7.5" y="3" width="2.6" height="4" rx="1.3"/><rect x="12" y="3" width="2.6" height="4" rx="1.3"/></svg>
+      Cap
+    </button>
+  </div>
+  <div class="safe-area" aria-hidden="true"><div class="bar"></div></div>
+</nav>
+
+<div class="hint smallcaps">Protótipo de exploração · dados demonstrativos</div>
+
+<script src="assets/data.js"></script>
+<script src="assets/orbital.js"></script>
+<script src="assets/mobile.js"></script>
+</body>
+</html>

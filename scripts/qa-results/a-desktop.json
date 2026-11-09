@@ -1,0 +1,28 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "Aqui está a verificação visual do mockup **FRAME FLOW OS**:\n\n1.  **Textos sobrepostos, cortados ou elementos vazando?**\n    OK. Todos os textos e componentes estão contidos dentro dos limites da tela (1440x900) sem cortes ou vazamentos visuais.\n\n2.  **Algo desalinhado ou quebrado?**\n    OK. O layout segue uma grade rigorosa (grid system). As colunas de KPIs, o gráfico e a lista de decisões estão perfeitamente alinhados horizontal e verticalmente.\n\n3.  **Texto ilegível por contraste/tamanho?**\n    OK. O contraste entre o fundo preto profundo (#0A0A0A) e o branco quente (#F4F0E7) é excelente. A hierarquia tipográfica (títulos grandes vs. dados pequenos) garante legibilidade total.\n\n4.  **Parece template SaaS genérico?**\n    NÃO. A identidade visual é forte e editorial. O uso do vermelho #E10606 como acento, a tipografia serifada nos títulos (\"Boa noite, Rubian\") e os detalhes \"cinemáticos\" (como o retângulo de foco no mascote) afastam completamente a sensação de template genérico.\n\n5.  **A fonte serifada elegante carregou?**\n    SIM. Os títulos principais (\"Boa noite, Rubian\" e \"Frame Flow OS\") exibem uma fonte Serif com alta elegância e personalidade (estilo Didot/Editorial), não um fallback sans-serif padrão.\n\n6.  **Há área reservada para o mascote (Capivara)?**\n    SIM. No canto superior direito, há um painel dedicado (\"Cap Executiva\") com iluminação dramática (spotlight) focando em um ícone geométrico de capivara segurando um documento, integrado à narrativa de \"Presença\".\n\n7.  **Em 5 segundos, as 3 informações prioritárias:**\n    1.  **Saudação Personalizada:** Identificação imediata do usuário (\"Boa noite, Rubian\") e contexto da sessão.\n    2.  **Saúde Financeira:** Destaque para a receita recorde do mês (**R$ 284.500**) e o gráfico de tendência ascendente.\n    3.  **Urgência Operacional:** Alerta visual de que existem **3 decisões aguardando voto** (destacado em vermelho na Central de Decisões).",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1793317186,
+  "id": "202610300739365e247970dd8e440a",
+  "model": "glm-5v-turbo",
+  "object": "chat.completion",
+  "request_id": "202610300739365e247970dd8e440a",
+  "usage": {
+    "completion_tokens": 571,
+    "completion_tokens_details": {
+      "reasoning_tokens": 0
+    },
+    "prompt_tokens": 5989,
+    "prompt_tokens_details": {
+      "cached_tokens": 2
+    },
+    "total_tokens": 6560
+  }
+}

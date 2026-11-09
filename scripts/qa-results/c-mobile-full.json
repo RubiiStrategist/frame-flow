@@ -1,0 +1,28 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "Aqui está a QA visual do mockup mobile **FRAME FLOW OS**:\n\n1.  **Textos sobrepostos, cortados ou vazando?**\n    OK. A rolagem é vertical e os elementos estão contidos dentro da largura de 390px sem cortes ou sobreposições.\n\n2.  **Algo desalinhado ou quebrado?**\n    OK. O layout segue uma grade rígida e precisa (grid system), com alinhamentos consistentes à esquerda e espaçamentos uniformes entre os módulos.\n\n3.  **Texto ilegível?**\n    OK. O contraste entre o fundo preto (#0A0A0A) e o branco quente (#F4F0E7) é excelente. As fontes monoespaçadas para dados e serifadas para títulos estão nítidas.\n\n4.  **Parece template SaaS genérico?**\n    NÃO. A identidade visual é muito forte e atemporal (\"Brutalist/Executive\"). O uso de bordas finas, cantoneiras técnicas e a paleta restrita (preto/branco/vermelho) cria uma personalidade única e premium, distante de templates coloridos comuns.\n\n5.  **Títulos elegantes (serifada) carregaram?**\n    SIM. Os títulos como \"Boa noite, Rubian\", \"Inteligência Financeira\" e \"Central de Decisões\" exibem corretamente a tipografia serifada elegante, que contrasta bem com o corpo do texto em sans-serif/mono.\n\n6.  **Área do mascote (capivara) presente e bem enquadrada?**\n    SIM. O ícone estilizado da capivara (com gravata/camisa) está presente no módulo \"Cap Executiva\" na parte inferior, centralizado e bem proporcional ao redor de texto.\n\n7.  **Em 5 segundos, quais 3 informações prioritárias?**\n    1.  **Urgência de Decisão:** O aviso vermelho no topo indica que há \"3 decisões aguardando seu voto\" com prazo imediato.\n    2.  **Saúde Financeira:** O destaque visual imediato para o valor \"R$ 284.500\" de receita e a tendência positiva (+6,2%).\n    3.  **Status Operacional:** A visão rápida de que existem itens atrasados (indicadores vermelhos em \"Pulso Operacional\" e \"Indicadores Comerciais\").",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1793317276,
+  "id": "2026103007410616e5072b651e46b0",
+  "model": "glm-5v-turbo",
+  "object": "chat.completion",
+  "request_id": "2026103007410616e5072b651e46b0",
+  "usage": {
+    "completion_tokens": 561,
+    "completion_tokens_details": {
+      "reasoning_tokens": 0
+    },
+    "prompt_tokens": 3770,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "total_tokens": 4331
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "Aqui está a QA visual do mockup **FRAME FLOW OS**:\n\n1.  **Textos sobrepostos, cortados ou elementos vazando lateralmente?**\n    OK. A interface está contida dentro do limite de 390px sem rolagem horizontal indesejada.\n\n2.  **Algo desalinhado ou quebrado?**\n    OK. O grid está consistente, as bordas dos cards (Núcleo, Decisões) estão alinhadas e os espaçamentos verticais são uniformes.\n\n3.  **Texto ilegível?**\n    OK. O contraste entre o preto #0A0A0A e o branco quente #F4F0E7 é excelente. Os tamanhos de fonte hierárquicos (títulos grandes vs. dados pequenos) estão legíveis.\n\n4.  **Parece template SaaS genérico?**\n    NÃO. A estética é muito forte e específica (\"Brutalist/Tech Noir\"). O uso de linhas finas de grade (grid), tipografia monoespaçada para metadados e o gráfico orbital dão uma identidade visual única e sofisticada.\n\n5.  **Títulos elegantes (serifada) carregaram?**\n    OBSERVAÇÃO: O título principal \"Boa noite, comandante.\" e os cabeçalhos parecem estar usando uma **Sans-Serif** geométrica ou grotesca (estilo Inter/Roboto), não uma Serifada clássica. Se a intenção era Serifada (ex: Playfair Display), ela não carregou ou foi substituída. Se a identidade é \"Tech/Sans\", então está **OK**.\n\n6.  **Área do mascote (capivara) presente e bem enquadrada?**\n    NÃO VISÍVEL na área visível da tela. O card \"ESTAÇÃO CAP\" aparece no rodapé cortado, mas a imagem/ilustração do mascote em si não está aparente neste viewport inicial.\n\n7.  **Em 5 segundos, quais 3 informações prioritárias?**\n    1.  **Saudação Personalizada:** Identificação imediata do usuário (\"Boa noite, comandante\") e status da sessão.\n    2.  **Saúde Financeira:** Os números de receita (284.500) e a variação positiva (▲6,2%) chamam atenção pelo tamanho e cor.\n    3.  **Urgência Operacional:** A lista de decisões mostra prazos críticos (ex: \"DOM 18:00\" em vermelho), indicando onde o usuário precisa agir agora.",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1793317257,
+  "id": "20261030074048629e0166e39048b7",
+  "model": "glm-5v-turbo",
+  "object": "chat.completion",
+  "request_id": "20261030074048629e0166e39048b7",
+  "usage": {
+    "completion_tokens": 588,
+    "completion_tokens_details": {
+      "reasoning_tokens": 0
+    },
+    "prompt_tokens": 1866,
+    "prompt_tokens_details": {
+      "cached_tokens": 7
+    },
+    "total_tokens": 2454
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "Aqui está a verificação visual do mockup do **FRAME FLOW OS**:\n\n1.  **Textos sobrepostos, cortados ou elementos vazando?**\n    OK. A janela de comando (Command Palette) está centralizada e todos os textos internos estão contidos e legíveis sem cortes.\n\n2.  **Algo desalinhado ou quebrado?**\n    OK. O alinhamento da lista, ícones de atalho (esquerda) e códigos (direita) está preciso e estruturado em grid.\n\n3.  **Texto ilegível por contraste/tamanho?**\n    OK. O contraste entre o fundo escuro (#0A0A0A) e o texto claro (#F4F0E7) é excelente. Os tamanhos são hierárquicos e claros.\n\n4.  **Parece template SaaS genérico?**\n    NÃO. A estética é fortemente editorial e \"OS-like\". O uso de tipografia monoespaçada para metadados, a paleta escura específica e a interface de \"busca/comando\" afastam completamente o visual de dashboards genéricos de cartões cinzentos.\n\n5.  **A fonte serifada elegante carregou?**\n    Observação: No elemento desfocado ao fundo (\"Boa noite, Rubian\"), percebe-se uma fonte com serifas (estilo editorial). No foco principal (a janela), usa-se uma sans-serif/interface limpa, o que é padrão para janelas de sistema, mas a identidade serifada está presente no contexto.\n\n6.  **Há área para o mascote (Capivara)?**\n    SIM. No canto inferior direito, há um espaço reservado com baixa luminosidade onde a silhueta/ilustração do mascote geométrico está posicionada, integrada à interface sem poluir a área de trabalho.\n\n7.  **3 informações prioritárias identificadas em 5s:**\n    *   **Contexto de Usuário:** Saudação personalizada (\"Boa noite, Rubian\").\n    *   **Navegação Rápida (Command Palette):** Foco total na busca por ações (\"lentes anamórficas\", \"Financeiro\", etc.).\n    *   **Status/Atalhos:** Indicadores visuais de prioridade como \"VOTO\" (em vermelho #E10606), \"NOVO\" e códigos de atalho (ex: FF-01).",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1793317237,
+  "id": "2026103007402567bd2f1ae1bd4c07",
+  "model": "glm-5v-turbo",
+  "object": "chat.completion",
+  "request_id": "2026103007402567bd2f1ae1bd4c07",
+  "usage": {
+    "completion_tokens": 554,
+    "completion_tokens_details": {
+      "reasoning_tokens": 0
+    },
+    "prompt_tokens": 5989,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "total_tokens": 6543
+  }
+}

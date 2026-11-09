@@ -1,0 +1,28 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "Aqui está a QA visual do mockup mobile (390px) do **FRAME FLOW OS**:\n\n1.  **Textos sobrepostos/cortados/vazando?**\n    **OK.** O layout está limpo, com espaçamento (padding) adequado nas laterais e entre os blocos. Nenhum texto parece estar saindo da área visível ou colidindo com outros elementos.\n\n2.  **Desalinhado ou quebrado?**\n    **OK.** A grade (grid) está bem definida. Os títulos, ícones e dados numéricos estão alinhados consistentemente à esquerda ou centralizados conforme o padrão de cada card. As linhas divisórias estão retas.\n\n3.  **Texto ilegível?**\n    **OK.** O contraste entre o fundo preto (#0A0A0A), o branco quente (#F4F0E7) para os textos principais e o vermelho (#E10606) para destaques é excelente. A hierografia tipográfica (tamanhos diferentes para títulos, subtítulos e dados) facilita a leitura rápida.\n\n4.  **Parece template SaaS genérico?**\n    **NÃO.** A identidade visual é muito forte e distinta. O uso da estética \"Orbital/Sci-Fi\" (o gráfico de radar/elipse), a tipografia monoespaçada (estilo terminal/código) e a paleta específica criam uma personalidade única de \"Sistema Operacional de Comando\", fugindo completamente do padrão de dashboards corporativos comuns.\n\n5.  **O mascote capivara aparece bem enquadrado nesta tela inicial?**\n    **OK.** O mascote (\"Estação CAP\") está perfeitamente posicionado dentro do card dedicado. Ele não fica nem muito pequeno nem cortado, servindo como um ponto focal amigável (\"humanizador\") no meio da interface técnica densa.\n\n6.  **Em 5 segundos, quais 3 informações prioritárias?**\n    *   **Saudação e Status:** \"Boa noite, comandante\" + Identificação do usuário (Rubian/CEO).\n    *   **Visão Estratégica:** O \"Núcleo de Inteligência\" (gráfico orbital) mostrando onde estão os projetos (ex: Aurora, Vértice).\n    *   **Saúde Financeira Rápida:** Os números de \"Recebido\" (284.500) e \"Vencidas\" (2) na faixa do meio.",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1793317345,
+  "id": "20261030074216d921697464ef4281",
+  "model": "glm-5v-turbo",
+  "object": "chat.completion",
+  "request_id": "20261030074216d921697464ef4281",
+  "usage": {
+    "completion_tokens": 563,
+    "completion_tokens_details": {
+      "reasoning_tokens": 0
+    },
+    "prompt_tokens": 1832,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "total_tokens": 2395
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "Aqui está a verificação visual do mockup **FRAME FLOW OS** (390px):\n\n1.  **Textos sobrepostos, cortados ou elementos vazando lateralmente?**\n    OK. A layout está contido dentro da largura de 390px sem rolagem horizontal aparente ou cortes indevidos.\n\n2.  **Algo desalinhado ou quebrado?**\n    OK. O alinhamento da grade (grid) está preciso, com margens consistentes e elementos bem distribuídos verticalmente.\n\n3.  **Texto ilegível?**\n    OK. O contraste entre o preto (#0A0A0A) e o branco quente (#F4F0E7) é excelente. As hierarquias de tamanho (Título > Subtítulo > Corpo > Metadata) estão claras.\n\n4.  **Parece template SaaS genérico?**\n    NÃO. A identidade é muito forte e atemporal. O uso de tipografia serifada elegante para os títulos, o tom de voz (\"Boa noite\", \"sob seu olhar\") e a estética \"dark luxury\" afastam completamente o visual de templates genéricos de dashboard.\n\n5.  **Títulos elegantes (serifada) carregaram?**\n    SIM. A fonte serifada (estilo Didot/Bodoni) no título principal \"Boa noite, Rubian\" carregou perfeitamente, transmitindo a sofisticação desejada.\n\n6.  **Área do mascote (capivara) presente e bem enquadrada?**\n    SIM. O ícone do mascote (estilo line-art/minimalista) está centralizado na área do \"Cap Executivo\", com o destaque de luz (spotlight) e a moldura técnica bem aplicados.\n\n7.  **Em 5 segundos, quais 3 informações prioritárias?**\n    *   **Saudação Personalizada:** Identificação imediata do usuário (\"Boa noite, Rubian\").\n    *   **Alertas de Ação:** Status críticos urgentes (\"3 decisões aguardam voto\").\n    *   **KPI Principal Financeiro:** Destaque para o valor de receita (\"R$ 284.500\").",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1793317248,
+  "id": "20261030074038a896bacf7f464b8c",
+  "model": "glm-5v-turbo",
+  "object": "chat.completion",
+  "request_id": "20261030074038a896bacf7f464b8c",
+  "usage": {
+    "completion_tokens": 493,
+    "completion_tokens_details": {
+      "reasoning_tokens": 0
+    },
+    "prompt_tokens": 1866,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "total_tokens": 2359
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "Aqui está a verificação visual do mockup do **FRAME FLOW OS**:\n\n1.  **Textos sobrepostos, cortados ou elementos vazando?**\n    OK. Todos os textos e painéis estão contidos dentro das bordas da tela (1440x900), sem cortes visuais ou sobreposição problemática de camadas.\n\n2.  **Algo desalinhado ou quebrado?**\n    OK. A grade (grid) está rigorosamente alinhada. As colunas laterais e o centro estão simétricos. O layout \"editorial\" com linhas finas de separação está intacto.\n\n3.  **Texto ilegível por contraste/tamanho?**\n    OK. O contraste entre o fundo #0A0A0A e o texto #F4F0E7 é excelente. Os tamanhos hierárquicos (títulos grandes vs. dados pequenos) são legíveis, mantendo a estética \"terminal/OS\".\n\n4.  **Parece template SaaS genérico?**\n    NÃO. A identidade é forte e distinta. Evita o cinza \"flat\" padrão, usando preto profundo e acentos em vermelho #E10606. A tipografia monoespaçada e o gráfico orbital central (\"Núcleo de Inteligência\") quebram completamente o padrão de \"cartões repetidos\" de dashboards comuns.\n\n5.  **A fonte serifada elegante carregou?**\n    OK. Embora a UI use majoritariamente sans-serif (monoespaçada) para os dados operacionais, os títulos principais (\"NÚCLEO DE INTELIGÊNCIA\", \"CENTRAL DE DECISÕES\") exibem uma serifa editorial limpa e sofisticada, não um fallback genérico.\n\n6.  **Área reservada para o mascote (Capivara)?**\n    SIM. Existe um painel dedicado chamado \"**ESTAÇÃO CAP**\". Ele apresenta a ilustração vetorial da capivara geométrica, bem iluminada (destaque no foco de luz) e integrada ao sistema de status (Atenção, Processamento, Alerta).\n\n7.  **3 Informações prioritárias identificadas em 5s:**\n    1.  **Status Operacional:** O gráfico orbital central mostra o projeto ativo \"FILME AURORA\" em destaque (ponto vermelho).\n    2.  **Decisões Críticas:** O painel direito alerta para o \"Pacote de lentes anamórficas\" vencendo hoje (DOM 18:00).\n    3.  **Saúde Financeira:** O painel inferior esquerdo destaca a receita do mês (**R$ 284.500**) em crescimento.",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1793317197,
+  "id": "20261030073946fb60081050b34832",
+  "model": "glm-5v-turbo",
+  "object": "chat.completion",
+  "request_id": "20261030073946fb60081050b34832",
+  "usage": {
+    "completion_tokens": 623,
+    "completion_tokens_details": {
+      "reasoning_tokens": 0
+    },
+    "prompt_tokens": 5989,
+    "prompt_tokens_details": {
+      "cached_tokens": 225
+    },
+    "total_tokens": 6612
+  }
+}

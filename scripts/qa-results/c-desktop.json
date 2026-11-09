@@ -1,0 +1,28 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "Aqui está a verificação visual do mockup **FRAME FLOW OS**:\n\n1.  **Textos sobrepostos ou vazando?**\n    OK. O layout está contido, sem cortes visuais ou sobreposição problemática de elementos.\n\n2.  **Algo desalinhado ou quebrado?**\n    OK. A grade (grid) está precisa, com alinhamentos técnicos e editoriais consistentes.\n\n3.  **Texto ilegível por contraste/tamanho?**\n    OK. O contraste entre o preto #0A0A0A e o branco quente #F4F0E7 é excelente, garantindo legibilidade até nos textos menores (\"micro-copy\").\n\n4.  **Parece template SaaS genérico?**\n    NÃO. A identidade é forte: paleta escura com acentos em vermelho #E10606, tipografia serifada editorial e layout assimétrico (com o painel 3D à direita) fogem completamente do padrão de \"cartões cinzas repetidos\".\n\n5.  **A fonte serifada elegante carregou?**\n    SIM. Os títulos grandes (ex: \"Boa noite, Rubian\", \"Inteligência Financeira\") exibem uma serifa elegante e distinta, confirmando que a tipografia personalizada foi aplicada corretamente.\n\n6.  **Área para o mascote (Capivara)?**\n    SIM. Existe uma área dedicada no canto inferior direito (\"Cap Executiva\") com iluminação focal (spotlight) e o ícone da capivara geométrica brilhante, integrada ao contexto de \"Contas Vencidas\".\n\n7.  **3 Informações prioritárias em 5 segundos:**\n    *   **Status Financeiro:** Receita do mês (R$ 284.500) e resultado líquido.\n    *   **Ação Imediata:** Alertas de \"3 decisões aguardam voto\" e \"2 contas vencidas\".\n    *   **Contexto Operacional:** Status dos projetos criativos (Filme Aurora, Campanha Vértice) e pulso operacional da semana.",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1793317211,
+  "id": "20261030073957616189557eec49c7",
+  "model": "glm-5v-turbo",
+  "object": "chat.completion",
+  "request_id": "20261030073957616189557eec49c7",
+  "usage": {
+    "completion_tokens": 471,
+    "completion_tokens_details": {
+      "reasoning_tokens": 0
+    },
+    "prompt_tokens": 5989,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "total_tokens": 6460
+  }
+}

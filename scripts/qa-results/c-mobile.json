@@ -1,0 +1,28 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "Aqui está a análise visual do mockup **FRAME FLOW OS**:\n\n1.  **Textos sobrepostos, cortados ou elementos vazando lateralmente?**\n    OK. A layout está contido dentro da largura de 390px sem rolagem horizontal aparente ou cortes indevidos.\n\n2.  **Algo desalinhado ou quebrado?**\n    OK. O alinhamento da grade (grid) está preciso, com margens consistentes e elementos bem distribuídos verticalmente.\n\n3.  **Texto ilegível?**\n    OK. O contraste entre o preto (#0A0A0A) e o branco quente (#F4F0E7) é excelente, garantindo legibilidade em todos os tamanhos de fonte (títulos, corpo e labels).\n\n4.  **Parece template SaaS genérico?**\n    NÃO. A identidade é forte e distinta: o uso da fonte serifada elegante para títulos, a paleta escura \"premium\" e os detalhes técnicos (como o código \"FF : 01\") criam uma atmosfera de sistema operacional exclusivo/executivo, não de template padrão.\n\n5.  **Títulos elegantes (serifada) carregaram?**\n    SIM. A tipografia serifada (\"Boa noite, Rubian\" e os valores financeiros) carregou corretamente, transmitindo a sofisticação desejada.\n\n6.  **Área do mascote (capivara) presente e bem enquadrada?**\n    NÃO DETECTADA. A imagem fornecida mostra apenas a interface de dados (dashboard). Não há imagem de capivara visível nesta tela específica (pode estar em outra seção ou abaixo da dobra).\n\n7.  **Em 5 segundos, quais 3 informações prioritárias?**\n    1.  **Contexto Imediato:** Saudação personalizada e status da sessão (\"Boa noite, Rubian - CEO\").\n    2.  **Urgência/Ação:** Alerta de que há \"3 decisões aguardando voto\" com prazo (Domingo 18h).\n    3.  **Saúde Financeira:** Receita total do mês destacada (**R$ 284.500**) com variação positiva (+6,2%).",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1793317265,
+  "id": "202610300740574b77d7da4a6d4fe5",
+  "model": "glm-5v-turbo",
+  "object": "chat.completion",
+  "request_id": "202610300740574b77d7da4a6d4fe5",
+  "usage": {
+    "completion_tokens": 506,
+    "completion_tokens_details": {
+      "reasoning_tokens": 0
+    },
+    "prompt_tokens": 1866,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "total_tokens": 2372
+  }
+}
