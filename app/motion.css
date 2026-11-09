@@ -1,0 +1,175 @@
+/* FRAME FLOW motion: brief entrances, persistent content, immediate controls.
+   Deliberately targets surfaces and controls, never every descendant or SVG.
+   Surface entrances use opacity only: no new containing blocks for sticky/fixed. */
+:root {
+  --ff-motion-ease: cubic-bezier(0.2, 0.72, 0.2, 1);
+  --ff-motion-fast: 160ms;
+  --ff-motion-surface: 340ms;
+}
+
+@keyframes ff-surface-enter {
+  from { opacity: 0.78; }
+  to { opacity: 1; }
+}
+
+@keyframes ff-feedback-enter {
+  from { opacity: 0.7; }
+  to { opacity: 1; }
+}
+
+@keyframes ff-overlay-enter {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes ff-overlay-exit {
+  from { opacity: 1; }
+  to { opacity: 0; }
+}
+
+@keyframes ff-loading-breathe {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.55; }
+}
+
+/* Existing dashboard panels, common cards and the new module surfaces.
+   Even during their short delay, content stays readable and fully interactive. */
+.ff-motion-page :is(.ff-kpi, .ff-surface, .flow-kpi, .flow-panel, .ff-rise, [data-slot="card"], .rounded-2xl.bg-card) {
+  --ff-stagger: 0ms;
+  animation: ff-surface-enter var(--ff-motion-surface) var(--ff-motion-ease) both;
+  animation-delay: var(--ff-stagger) !important;
+}
+
+.ff-motion-page :is(.ff-kpi, .ff-surface, .flow-kpi, .flow-panel, .ff-rise, [data-slot="card"], .rounded-2xl.bg-card):nth-child(2) {
+  --ff-stagger: 35ms;
+}
+
+.ff-motion-page :is(.ff-kpi, .ff-surface, .flow-kpi, .flow-panel, .ff-rise, [data-slot="card"], .rounded-2xl.bg-card):nth-child(3) {
+  --ff-stagger: 70ms;
+}
+
+.ff-motion-page :is(.ff-kpi, .ff-surface, .flow-kpi, .flow-panel, .ff-rise, [data-slot="card"], .rounded-2xl.bg-card):nth-child(4) {
+  --ff-stagger: 105ms;
+}
+
+.ff-motion-page :is(.ff-kpi, .ff-surface, .flow-kpi, .flow-panel, .ff-rise, [data-slot="card"], .rounded-2xl.bg-card):nth-child(n + 5) {
+  --ff-stagger: 140ms;
+}
+
+/* Cancel a pending reveal when the user starts working inside a card. */
+.ff-motion-page :is(.ff-kpi, .ff-surface, .flow-kpi, .flow-panel, .ff-rise, [data-slot="card"], .rounded-2xl.bg-card):focus-within {
+  opacity: 1 !important;
+}
+
+.flow-shell :is([data-slot="button"], nav button, .ff-global-search, .flow-primary, .flow-action),
+:is([data-slot="dialog-content"], [data-slot="alert-dialog-content"], [data-slot="sheet-content"]) [data-slot="button"] {
+  transition-property: background-color, border-color, color, box-shadow, transform;
+  transition-duration: var(--ff-motion-fast);
+  transition-timing-function: var(--ff-motion-ease);
+}
+
+.flow-shell :is([data-slot="button"], nav button, .ff-global-search, .flow-primary, .flow-action):focus-visible {
+  outline: 2px solid var(--frame-red);
+  outline-offset: 3px;
+}
+
+.flow-shell :is([data-slot="button"], nav button, .flow-primary, .flow-action):not(:disabled):not([aria-disabled="true"]):active,
+:is([data-slot="dialog-content"], [data-slot="alert-dialog-content"], [data-slot="sheet-content"]) [data-slot="button"]:not(:disabled):active {
+  transform: translateY(1px);
+  transition-duration: 70ms;
+}
+
+.flow-shell :is([data-slot="input"], [data-slot="textarea"], [data-slot="select-trigger"], select) {
+  transition: border-color var(--ff-motion-fast) var(--ff-motion-ease), box-shadow var(--ff-motion-fast) var(--ff-motion-ease);
+}
+
+.flow-shell :is([data-slot="tabs-trigger"], [data-slot="switch"], [data-slot="checkbox"]) {
+  transition: background-color var(--ff-motion-fast), border-color var(--ff-motion-fast), color var(--ff-motion-fast);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .flow-shell :is([data-slot="button"], .ff-global-search):not(:disabled):not([aria-disabled="true"]):hover {
+    box-shadow: 0 0 0 1px rgba(237, 36, 52, 0.15);
+  }
+
+  .ff-motion-page :is(.ff-surface, [data-slot="card"], .rounded-2xl.bg-card) {
+    transition: border-color var(--ff-motion-fast) var(--ff-motion-ease);
+  }
+
+  .ff-motion-page :is(.ff-surface, [data-slot="card"], .rounded-2xl.bg-card):hover {
+    border-color: #403238;
+  }
+}
+
+/* Portals live outside the shell; their named slots provide a narrow boundary.
+   Keep Radix focus management and positioning untouched. */
+:is([data-slot="dialog-overlay"], [data-slot="alert-dialog-overlay"], [data-slot="sheet-overlay"])[data-state="open"] {
+  animation: ff-overlay-enter 180ms ease-out both;
+}
+
+:is([data-slot="dialog-overlay"], [data-slot="alert-dialog-overlay"], [data-slot="sheet-overlay"])[data-state="closed"] {
+  animation: ff-overlay-exit 120ms ease-in both;
+}
+
+:is([data-slot="dialog-content"], [data-slot="alert-dialog-content"])[data-state="open"] {
+  animation: ff-feedback-enter 200ms var(--ff-motion-ease) both;
+}
+
+:is([data-slot="dialog-content"], [data-slot="alert-dialog-content"])[data-state="closed"] {
+  animation: ff-overlay-exit 120ms ease-in both;
+}
+
+:is([data-slot="dropdown-menu-content"], [data-slot="dropdown-menu-sub-content"], [data-slot="select-content"], [data-slot="popover-content"], [data-slot="tooltip-content"])[data-state="open"] {
+  animation: ff-feedback-enter 140ms var(--ff-motion-ease) both;
+}
+
+:is([data-slot="dropdown-menu-content"], [data-slot="dropdown-menu-sub-content"], [data-slot="select-content"], [data-slot="popover-content"], [data-slot="tooltip-content"])[data-state="closed"] {
+  animation: ff-overlay-exit 100ms ease-in both;
+}
+
+[data-slot="sheet-content"][data-state="open"] {
+  animation-duration: 260ms;
+  animation-timing-function: var(--ff-motion-ease);
+}
+
+[data-slot="sheet-content"][data-state="closed"] {
+  animation-duration: 180ms;
+}
+
+/* A bounded loading signal; no permanent decorative pulse or shimmer layer. */
+.flow-shell [data-slot="skeleton"] {
+  animation: ff-loading-breathe 1400ms ease-in-out 3;
+}
+
+.ff-motion-page :is(p[role="alert"], p[role="status"]) {
+  animation: ff-feedback-enter 160ms var(--ff-motion-ease);
+}
+
+@media (max-width: 767px) {
+  :root { --ff-motion-surface: 240ms; }
+  .ff-motion-page :is(.ff-kpi, .ff-surface, .flow-kpi, .flow-panel, .ff-rise, [data-slot="card"], .rounded-2xl.bg-card):nth-child(n + 3) {
+    --ff-stagger: 60ms;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  /* A genuinely static state, including old entrance classes in these views.
+     No descendant wildcard: charts and Cap retain their own accessibility rules. */
+  .ff-motion-page,
+  .ff-motion-page :is(.ff-kpi, .ff-surface, .flow-kpi, .flow-panel, .ff-rise, .flow-reveal, [data-slot="card"], .rounded-2xl.bg-card, p[role="alert"], p[role="status"]),
+  .flow-shell [data-slot="skeleton"],
+  :is([data-slot="dialog-overlay"], [data-slot="alert-dialog-overlay"], [data-slot="sheet-overlay"], [data-slot="dialog-content"], [data-slot="alert-dialog-content"], [data-slot="sheet-content"], [data-slot="dropdown-menu-content"], [data-slot="dropdown-menu-sub-content"], [data-slot="select-content"], [data-slot="popover-content"], [data-slot="tooltip-content"]) {
+    animation: none !important;
+    opacity: 1;
+  }
+
+  .flow-shell :is([data-slot="button"], nav button, .ff-global-search, .flow-primary, .flow-action, [data-slot="input"], [data-slot="textarea"], [data-slot="select-trigger"], select, [data-slot="tabs-trigger"], [data-slot="switch"], [data-slot="checkbox"], .ff-surface, [data-slot="card"], .rounded-2xl.bg-card),
+  :is([data-slot="dialog-content"], [data-slot="alert-dialog-content"], [data-slot="sheet-content"]) [data-slot="button"] {
+    transition: none !important;
+  }
+
+  .flow-shell :is([data-slot="button"], nav button, .flow-primary, .flow-action):active,
+  :is([data-slot="dialog-content"], [data-slot="alert-dialog-content"], [data-slot="sheet-content"]) [data-slot="button"]:active {
+    transform: none !important;
+  }
+}
